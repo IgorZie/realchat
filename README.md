@@ -19,11 +19,18 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## Contributors
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+<table>
+  <tr>
+    <td align="center">
+        <a href="https://www.linkedin.com/in/igor-zielosko-4775b821a/">
+            <img style="border-radius: 50%;" src="https://github.com/IgorZie.png" width="100px;" alt=""/>
+            <br />
+            <sub>
+                <b>Igor Zielosko</b>
+            </sub>
+        </a>
+        <br />
+        <a href="https://dev.mailou.com.br/" title="Mailou Dev">👨‍🚀</a>
+    </td>
+  </tr>
+</table>
