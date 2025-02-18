@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  postgres_chat:
+    container_name: 'postgres_chat'
+    image: 'postgres:14.1-alpine'
+    env_file:
+      - ../../.env
+    ports:
+      - '54320:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+  mock-aws:
+    image: localstack/localstack:latest
+    ports:
+      - '4566:4566'  # Porta principal do LocalStack
+      - '4572:4572'  # S3
+      - '4574:4574'  # SES
+    environment:
+      - AWS_DEFAULT_REGION=us-east-1
+      - EDGE_PORT=4566
+      - SERVICES=lambda,s3,ses
+      - TZ=UTC
+    volumes:
+      - './providers/storage/aws-dev:/docker-entrypoint-initaws.d'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+volumes:
+  postgres_data:

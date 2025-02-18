@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "target": "ES2021", // Define a versão do ECMAScript
+      "module": "commonjs", // Define o sistema de módulos
+      "strict": true, // Habilita todas as verificações de tipo
+      "esModuleInterop": true, // Permite a importação de módulos CommonJS
+      "skipLibCheck": true, // Ignora a verificação de tipos nas bibliotecas
+      "forceConsistentCasingInFileNames": true, // Força consistência no casing dos nomes de arquivos
+      "outDir": "./dist" // Diretório de saída para os arquivos compilados
+    },
+    "include": ["src/**/*.ts"], // Inclui todos os arquivos .ts na pasta src
+    "exclude": ["node_modules"] // Exclui a pasta node_modules
+  }

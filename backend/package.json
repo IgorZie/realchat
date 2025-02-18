@@ -1,0 +1,39 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "migrate:dev": "npx prisma migrate dev --schema ./prisma/schema.prisma",
+    "migrate:generate": "npx prisma generate --schema ./prisma/schema.prisma",
+    "services:up": "docker-compose -f src/infra/docker-compose.development.yml up -d",
+    "dev": "npm run services:up && nodemon --exec ts-node src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.3.1",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/helmet": "^0.0.48",
+    "@types/jsonwebtoken": "^9.0.8",
+    "@types/node": "^22.13.4",
+    "@types/nodemailer": "^6.4.17",
+    "@types/socket.io": "^3.0.1",
+    "bcryptjs": "^3.0.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.10.0",
+    "nodemon": "^3.1.9",
+    "prisma": "^6.3.1",
+    "socket.io": "^4.8.1",
+    "typescript": "^5.7.3",
+    "zod": "^3.24.2"
+  }
+}
