@@ -115,7 +115,7 @@ export function Logon() {
                     `}
                 >
                     <div
-                        className={`bg-gradient-to-r from-[#5686C9] to-[#26447F] bg-no-repeat bg-cover bg-left text-white relative left-[-100%] h-full w-[200%] transform 
+                        className={`bg-primaryDefault bg-no-repeat bg-cover bg-left text-white relative left-[-100%] h-full w-[200%] transform 
                             transition-transform duration-600 ease-in-out ${!signIn ? "transform translate-x-1/2" : ""}
                         `}
                     >

@@ -4,7 +4,7 @@ import { useChatStore } from "./store"
 
 const socket = io("http://localhost:3333");
 
-export default function App() {
+export function App() {
   const { messages, addMessage, clearMessages } = useChatStore()
   const [message, setMessage] = useState("")
 
