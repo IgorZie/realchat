@@ -2,7 +2,6 @@ import { ConflictError } from "../errors/Errors";
 import { UsersRepositories } from "../repositories/Users";
 import { IUsers } from '../schemas/UsersSchema'
 import { Password } from "../security/Password";
-import { generatePass } from "../utils/generatePass";
 
 export class Users {
 
@@ -32,6 +31,11 @@ export class Users {
             ...newUser
         }
 
-    }    
+    }  
+    
+    async readAll(){
+        const usersRepositories = new UsersRepositories()
+        return await usersRepositories.readAll()
+    }
     
 }

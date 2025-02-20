@@ -21,9 +21,28 @@ async function create(request: Request, response: Response, next: NextFunction) 
     } catch (error) {
         next(error)
     }
+}
 
+async function readAll(request: Request, response: Response, next: NextFunction) {
+    try {
+        
+        const usersService = new Users()
+    
+        const data = await usersService.readAll()
+
+        return response.status(200).json({
+            status: 200,
+            description: 'Success',
+            message: "Busca realizada com sucesso",
+            data
+        })
+
+    } catch (error) {
+        next(error)
+    }
 }
 
 export default {
-    create
+    create,
+    readAll
 }

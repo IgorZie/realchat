@@ -1,17 +1,22 @@
-import JWT from 'jsonwebtoken'
-import dotenv from 'dotenv'
-dotenv.config()
+import { Request, Response, NextFunction } from 'express'
+import { Token } from '../security/Token'
+import { UnauthorizedError } from '../errors/Errors'
 
-export function validToken(token: string) {
+export async function validToken(request: Request, response: Response, next: NextFunction) {
+    const { authorization } = request.headers
+
     try {
-        const valid = JWT.verify(token, String(process.env.JWT_SECRET))
-
-        if (!valid) {
-            return false
+        
+        const newToken = new Token() 
+        const verifyToken = await newToken.verify(String(authorization))
+        
+        if (!verifyToken){
+            throw new UnauthorizedError({})
         }
-        return true
+
+        next()
 
     } catch (error) {
-        return false
+        next(error)
     }
 }

@@ -5,7 +5,9 @@ dotenv.config()
 export class Token {
 
     async create(data: { users_id: number }){
-        const token = jwt.sign(data, String(process.env.JWT_SECRET))
+        const token = jwt.sign(data, String(process.env.JWT_SECRET), {
+            expiresIn: "24 hours"
+        })
         return token
     }
 
